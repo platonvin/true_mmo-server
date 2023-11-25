@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "sqlite3.h": "c",
+        "entity.h": "c",
+        "net_t.h": "c",
+        "entity_t.h": "c"
+    }
+}

@@ -2,34 +2,52 @@
 #include <string.h>
 #include <assert.h>
 // #include <enet/enet.h>
+#include <hasht/khash.h>
 
 
 // #define LIBRG_IMPLEMENTATION
-#include <librg/librg.h>
 #include <sqlite3.h>
 #include <net/net.h>
 
 // void update
 
+KHASH_MAP_INIT_INT(ht, double)
 int main()
 {
-    server_t server;
-
-    librg_world *world = librg_world_create();
-
-    /* create our world configuration */
-    librg_config_chunksize_set(world, 16, 16, 16);
-    librg_config_chunkamount_set(world, 100, 100, 100);
-    librg_config_chunkoffset_set(world, LIBRG_OFFSET_MID, LIBRG_OFFSET_MID, LIBRG_OFFSET_MID);
+    // server_t server;
 
 
-    net_init(&server);
 
-    while (1) 
-    {
-        // printf("server loop\n");
-        net_handle(&server);
+    // net_init(&server);
+
+    // while (1) 
+    // {
+    //     printf("server loop\n");
+    //     net_handle(&server);
         
+    // }
+    // net_deinit(&server);
+    int retcode;
+    khiter_t iterator;
+
+    khash_t(ht)* hashtable = kh_init(ht);
+    kh_put(ht, hashtable, 777, &retcode);
+    kh_put(ht, hashtable, 222, &retcode);
+    kh_put(ht, hashtable, 666, &retcode);
+
+    iterator = kh_get(ht, hashtable, 777);
+    kh_value(hashtable, iterator) = 17.0;
+    iterator = kh_get(ht, hashtable, 222);
+    kh_value(hashtable, iterator) = 12.0;
+    iterator = kh_get(ht, hashtable, 666);
+    kh_value(hashtable, iterator) = 16.0;
+
+    for (iterator = kh_begin(hashtable); iterator != kh_end(hashtable); iterator++)
+    {
+        if (kh_exist(hashtable, iterator)) 
+        {
+            // kh_value(h, k) = 1;
+            printf("%lf ", kh_value(hashtable, iterator));
+        }
     }
-    net_deinit(&server);
 }
