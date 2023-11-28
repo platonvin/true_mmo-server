@@ -6,7 +6,7 @@
 
 
 // #define LIBRG_IMPLEMENTATION
-#include <sqlite3.h>
+// #include <sqlite3.h>
 #include <net/net.h>
 
 // void update
@@ -33,6 +33,10 @@ int main()
     khash_t(ht)* hashtable = kh_init(ht);
     kh_put(ht, hashtable, 777, &retcode);
     kh_put(ht, hashtable, 222, &retcode);
+    kh_put(ht, hashtable, 111, &retcode);
+    kh_put(ht, hashtable, 3, &retcode);
+    kh_put(ht, hashtable, 444, &retcode);
+    kh_put(ht, hashtable, 55, &retcode);
     kh_put(ht, hashtable, 666, &retcode);
 
     iterator = kh_get(ht, hashtable, 777);
@@ -46,8 +50,11 @@ int main()
     {
         if (kh_exist(hashtable, iterator)) 
         {
-            // kh_value(h, k) = 1;
+            // kh_
             printf("%lf ", kh_value(hashtable, iterator));
+            // kh_value(h, k) = 1;
         }
     }
+
+    printf("\n%d %d", kh_end(hashtable), kh_begin(hashtable));
 }

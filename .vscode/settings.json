@@ -3,6 +3,11 @@
         "sqlite3.h": "c",
         "entity.h": "c",
         "net_t.h": "c",
-        "entity_t.h": "c"
+        "entity_t.h": "c",
+        "quadtree.h": "c",
+        "structs.h": "c",
+        "vector.h": "c",
+        "khash.h": "c",
+        "kvad.h": "c"
     }
 }

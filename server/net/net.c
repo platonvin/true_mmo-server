@@ -28,6 +28,8 @@ static void handle_event(ENetEvent event)
     {
         case ENET_EVENT_TYPE_CONNECT:
             printf("client connected\n");
+            // event.peer->data = 
+            // add client char to map and write down its id in htable
             break;
 
         case ENET_EVENT_TYPE_RECEIVE:
@@ -54,4 +56,8 @@ void net_update(server_t* server)
     {
         handle_event(event);
     }
+
+    // enetpacket
+    server->net.host->peers
+    // enet_host_broadcast
 }

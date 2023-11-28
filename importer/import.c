@@ -16,7 +16,6 @@ int main()
     char* cute_map_file = "assets/map/new_map.tmj";
 
     FILE* chunk_file   = fopen("assets/map/chunk_file", "wb");
-    FILE* manager_file = fopen("assets/map/chunk_manager", "wb");
 
     cute_tiled_map_t* cute_map = cute_tiled_load_map_from_file(cute_map_file, 0);
     int* data = cute_map->layers[0].data;
