@@ -8,6 +8,20 @@
         "structs.h": "c",
         "vector.h": "c",
         "khash.h": "c",
-        "kvad.h": "c"
+        "kvad.h": "c",
+        "stdlib.h": "c",
+        "enet.h": "c",
+        "net.h": "c",
+        "typeinfo": "c",
+        "chunk_t.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "assert.h": "c",
+        "time.h": "c",
+        "timeapi.h": "c",
+        "mmsystem.h": "c",
+        "vec.h": "c",
+        "math.h": "c"
     }
 }

@@ -7,6 +7,7 @@ typedef struct player_t
 {
     int entityid;
 
-    int client_id; // that controls the entity;
+    void* inventory;
+    // void* effects;
 
 } player_t;

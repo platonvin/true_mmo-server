@@ -1,8 +1,11 @@
 #pragma once
 
-#include <net/net.h>
+#include "player.h"
 
 
-void player_create();
+void player_create()
+{
+    
+}
 void player_destroy();
 void players_update();

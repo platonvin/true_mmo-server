@@ -7,8 +7,11 @@
 
 #define CHUNK_SIZE 8
 
-// copy_chunk_to_chunkfile(int i, int j, FILE* chunkfile);
-// copy_chunk_to_chunkmap (int i, int j, FILE* chunkmap );
+/*
+data is stored like this:
+width in chunks
+length in chunks
+*/
 
 int main()
 {
@@ -49,7 +52,7 @@ int main()
     //     print("\n");
     // }
     print("\nchunks_height %d chunks_width %d\n", chunks_height, chunks_width);
-    assert(fwrite(&chunks_height, sizeof(int), 1, manager_file)==1);
+    // assert(fwrite(&chunks_height, sizeof(int), 1, manager_file)==1);
     // fprintf(manager_file, "%d ", chunks_height);
     // int pos = ftell(manager_file);
     // fseek(manager_file, 0, SEEK_SET);

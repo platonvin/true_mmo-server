@@ -45,7 +45,12 @@ void chunk_load_system(char* file_name, server_t* s)
 
 chunk_t* get_chunk(server_t* s, int x, int y)
 {
+    int x_in_chunks = x / 16;
+    int y_in_chunks = y / 16;
 
+    chunk_t* chunk = &s->cm.chunks[x_in_chunks + s->cm.width * y_in_chunks];
+    // get
+    return chunk;
 }
 
 block_t get_block(server_t* s, int x, int y, int z)
@@ -53,7 +58,9 @@ block_t get_block(server_t* s, int x, int y, int z)
     block_t block;
     chunk_t* chunk = get_chunk(s, x, y);
 
-    // block = chunk->blocks[x+y+z];
+    block = chunk->blocks[x + y * 16 + z * 16 * 16];
+
+    return block;
 }
 
 

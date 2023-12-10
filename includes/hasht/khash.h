@@ -1,3 +1,4 @@
+#pragma once
 /* The MIT License
 
    Copyright (c) 2008, 2009, 2011 by Attractive Chaos <attractor@live.co.uk>
@@ -176,7 +177,7 @@ typedef khint_t khiter_t;
 #define kroundup32(x) (--(x), (x)|=(x)>>1, (x)|=(x)>>2, (x)|=(x)>>4, (x)|=(x)>>8, (x)|=(x)>>16, ++(x))
 #endif
 
-#ifndef kcalloc
+#ifndef kc
 #define kcalloc(N,Z) calloc(N,Z)
 #endif
 #ifndef kmalloc
